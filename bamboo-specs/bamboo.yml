@@ -1,8 +1,8 @@
 version: 2
 
 plan:
-  project-key: AK
-  key: AK
+  project-key: BAM
+  key: TEST
   name: Checkmarx ast-cli
 
 stages:
