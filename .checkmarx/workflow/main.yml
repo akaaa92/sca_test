@@ -10,7 +10,7 @@
     # Client ID for AST portal authentication
     project_name: # optional, default is ${{ github.repository }}
     # Branch name
-    branch: # optional, default is ${{ github.head_ref || github.ref }}
+    branch: # optional, default is ${{ github.head_ref || github.ref }} test
     # GitHub API Token
     github_token: # optional, default is ${{ github.token }}
     # Additional parameters for AST scan
