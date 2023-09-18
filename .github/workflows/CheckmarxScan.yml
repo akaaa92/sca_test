@@ -1,0 +1,22 @@
+- name: Checkmarx AST Github Action
+  # You may pin to the exact commit or the version.
+  # uses: Checkmarx/ast-github-action@f9e0e85a6c0a37f3e716007203c9db7fe17356d4
+  uses: Checkmarx/ast-github-action@2.0.20
+  with:
+    # Provide the AST portal URL
+    base_uri: https://eu.ast.checkmarx.net 
+    # Provide the Tenant for AST portal URL
+    cx_tenant: test_naftali
+    # Client ID for AST portal authentication
+    project_name: # optional, default is ${{ github.repository }}
+    # Branch name
+    branch: # optional, default is ${{ github.head_ref || github.ref }}
+    # GitHub API Token
+    github_token: # optional, default is ${{ github.token }}
+    # Additional parameters for AST scan
+    additional_params:  --apikey ${{ secrets.CX_API_KEY }} --scan-types sast,iac-security,sca --async --debug
+    repo_name: # optional, default is ${{ github.event.repository.name }}
+    # Organization name to create the Pr comment
+    namespace: # optional, default is ${{ github.repository_owner }}
+    # Pr Number of the pull request that needs the decoration
+    pr_number: # optional, default is ${{ github.event.number }}
