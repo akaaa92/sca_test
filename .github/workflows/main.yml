@@ -17,5 +17,5 @@ jobs:
           project_name: CxONEaction
           cx_tenant: test_naftali
           base_uri: https://eu.ast.checkmarx.net 
-          additional_params : --apikey eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwOWE5Njk4Ny04OTIwLTQ3YTQtYmE5Yi1kZjY0MTdkODYyN2EifQ.eyJpYXQiOjE2OTUxMzE1MzQsImp0aSI6IjZhMGY3ZDhlLWEwZWUtNGJiYy04MDMwLTJmNjRjZDNlZmJhNiIsImlzcyI6Imh0dHBzOi8vZXUuaWFtLmNoZWNrbWFyeC5uZXQvYXV0aC9yZWFsbXMvdGVzdF9uYWZ0YWxpIiwiYXVkIjoiaHR0cHM6Ly9ldS5pYW0uY2hlY2ttYXJ4Lm5ldC9hdXRoL3JlYWxtcy90ZXN0X25hZnRhbGkiLCJzdWIiOiJjZGNjZGU5Ni1mMTkzLTQ2NjAtYmRjOC00MzIxMjJjN2UyZTYiLCJ0eXAiOiJPZmZsaW5lIiwiYXpwIjoiYXN0LWFwcCIsInNlc3Npb25fc3RhdGUiOiJhYWMyMGQxZC01NmQ4LTRkNDctOGUyYi04YTNjZDlkZmQzMDciLCJzY29wZSI6IiBvZmZsaW5lX2FjY2VzcyIsInNpZCI6ImFhYzIwZDFkLTU2ZDgtNGQ0Ny04ZTJiLThhM2NkOWRmZDMwNyJ9.G4kKWleygOjCNxnt2kWMTMzUlZAJJw0pmYADGMjH9Pk  --debug 
+          additional_params: --apikey ${{secrets.CX_APIKEY}}  --debug 
           
