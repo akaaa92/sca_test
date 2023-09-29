@@ -25,11 +25,3 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: Application security testing@2022
-  inputs:
-    projectName: 'test5'
-    enableProxy: false
-    enableSastScan: true
-    CheckmarxService: 'sast'
-    fullTeamName: 'CxServer'
-    enableDependencyScan: false
