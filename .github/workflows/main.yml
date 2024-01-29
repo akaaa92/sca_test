@@ -25,3 +25,4 @@ jobs:
           break_build: false
           scanners: sca
           bug_tracker: Sarif
+          params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory --github   --cx-flow.enabled-zip-scan= true 
