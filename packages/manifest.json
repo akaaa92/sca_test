@@ -1,27 +1,58 @@
 {
-  "name": "Vulnerability Scanner",
-  "version": "1.0.0",
-  "description": "A tool for scanning software for potential security vulnerabilities.",
-  "author": "Your Name or Organization",
-  "license": "MIT",
   "dependencies": {
-    "dependency-library-1": "^1.0.0",
-    "dependency-library-2": "^2.1.0",
-    "dependency-library-3": "^3.2.1"
-  },
-  "scripts": {
-    "start": "node index.js"
-  },
-  "devDependencies": {
-    "testing-library": "^1.0.0",
-    "mocking-library": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/your-repo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/your-username/your-repo/issues"
-  },
-  "homepage": "https://your-website.com"
+    "com.browar.editor-toolbox": "https://github.com/arimger/Unity-Editor-Toolbox.git#upm",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.google.external-dependency-manager": "file:../GooglePackages/com.google.external-dependency-manager-1.2.176.tgz",
+    "com.google.firebase.analytics": "file:../GooglePackages/com.google.firebase.analytics-11.1.0.tgz",
+    "com.google.firebase.app": "file:../GooglePackages/com.google.firebase.app-11.1.0.tgz",
+    "com.google.firebase.auth": "file:../GooglePackages/com.google.firebase.auth-11.1.0.tgz",
+    "com.google.firebase.crashlytics": "file:../GooglePackages/com.google.firebase.crashlytics-11.1.0.tgz",
+    "com.google.firebase.database": "file:../GooglePackages/com.google.firebase.database-11.1.0.tgz",
+    "com.google.firebase.dynamic-links": "file:../GooglePackages/com.google.firebase.dynamic-links-11.1.0.tgz",
+    "com.google.firebase.firestore": "file:../GooglePackages/com.google.firebase.firestore-11.1.0.tgz",
+    "com.google.firebase.storage": "file:../GooglePackages/com.google.firebase.storage-11.1.0.tgz",
+    "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.addressables": "1.19.19",
+    "com.unity.ide.rider": "3.0.27",
+    "com.unity.ide.visualstudio": "2.0.22",
+    "com.unity.localization": "1.3.2",
+    "com.unity.testtools.codecoverage": "1.2.4",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.xr.arcore": "4.2.9",
+    "com.unity.xr.arfoundation": "4.2.9",
+    "com.unity.xr.arkit": "4.2.9",
+    "net.tnrd.nsubstitute": "https://github.com/Thundernerd/Unity3D-NSubstitute.git",
+    "com.unity.modules.ai": "1.0.0",
+    "com.unity.modules.androidjni": "1.0.0",
+    "com.unity.modules.animation": "1.0.0",
+    "com.unity.modules.assetbundle": "1.0.0",
+    "com.unity.modules.audio": "1.0.0",
+    "com.unity.modules.cloth": "1.0.0",
+    "com.unity.modules.director": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.particlesystem": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.modules.screencapture": "1.0.0",
+    "com.unity.modules.terrain": "1.0.0",
+    "com.unity.modules.terrainphysics": "1.0.0",
+    "com.unity.modules.tilemap": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.modules.umbra": "1.0.0",
+    "com.unity.modules.unityanalytics": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
+    "com.unity.modules.unitywebrequestaudio": "1.0.0",
+    "com.unity.modules.unitywebrequesttexture": "1.0.0",
+    "com.unity.modules.unitywebrequestwww": "1.0.0",
+    "com.unity.modules.vehicles": "1.0.0",
+    "com.unity.modules.video": "1.0.0",
+    "com.unity.modules.vr": "1.0.0",
+    "com.unity.modules.wind": "1.0.0",
+    "com.unity.modules.xr": "1.0.0"
+  }
 }
