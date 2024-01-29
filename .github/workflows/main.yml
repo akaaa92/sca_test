@@ -25,4 +25,4 @@ jobs:
           break_build: false
           scanners: sca
           bug_tracker: Sarif
-          params: --cx-flow.sca.enabled-zip-scan= true  --cx-flow.sca.include-sources= true --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}  --cx-flow.sca.manifests-include-pattern= "!**/*.xml, **/*.yml"  --cx-flow.sca.fingerprints-include-pattern= "**/*.yml" --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE                 
+          params: --cx-flow.sca.include-sources= true --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}  --cx-flow.sca.manifests-include-pattern= "**/manifest.json"  --cx-flow.sca.fingerprints-include-pattern= "**/manifest.json" --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE                 
