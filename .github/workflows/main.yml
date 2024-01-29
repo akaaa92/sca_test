@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx CxFlow Action
-        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
+        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9 # GitHub Action version
         with:
           project: "CareAR-IO-remote-annotation-webgl" # <-- Insert Checkmarx CxSCA Project Name
           sca_api_url: https://eu.api-sca.checkmarx.net
