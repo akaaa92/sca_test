@@ -25,4 +25,4 @@ jobs:
           break_build: false
           scanners: sca
           bug_tracker: Sarif
-          params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="https://github.com/carear-io/alto-ai" --cx-flow.filterSeverity --cx-flow.filterCategory
+          params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="https://github.com/carear-io/alto-ai" --cx-flow.filterSeverity --cx-flow.filterCategory   --sca.include-sources = true                     
