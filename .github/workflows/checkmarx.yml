@@ -1,45 +1,28 @@
-# This workflow is to automate Checkmarx SCA scans.  It runs on a push to the main branch.
-#
-# The following GitHub Secrets must be first defined:
-#   - CHECKMARX_SCA_USERNAME
-#   - CHECKMARX_SCA_PASSWORD
-#
-# The following variables must be inserted below:
-#   - <ProjectName>
-#   - <SCATenant>
-#   - <GitHubRepoUrl>
-#
-# For full documentation, including a list of all inputs, please refer to the README https://github.com/checkmarx-ts/checkmarx-cxflow-github-action
+name: SCA with SCA resolver
 
-name: Checkmarx SCA Scan
 on:
   push:
-    branches:
-      - main
-      - master
-    
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
 jobs:
-  build:
+   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Checkmarx CxFlow Action
-      uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.4 # GitHub Action version
-      with:
-        project: test_cxflow  # <-- Insert Checkmarx CxSCA Project Name
-        sca_api_url: https://eu.api.scacheckmarx.com
-        sca_app_url: https://eu.sca.scacheckmarx.com
-        sca_access_control_url: https://eu.platform.checkmarx.net
-        sca_tenant: <SCATenant>  # <-- Insert Checkmarx CxSCA Tenant
-        sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }} # To be stored in GitHub Secrets.
-        sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
-        break_build: false
-        scanners: sca
-        bug_tracker: Sarif
-        params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --repo-url="<GitHubRepoUrl>" --cx-flow.filterSeverity --cx-flow.filterCategory
-
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: cx.sarif
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkmarx CxFlow Action
+        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9 # GitHub Action version
+        with:
+          project: "test_cxflow_ga" # <-- Insert Checkmarx CxSCA Project Name
+          sca_api_url: https://eu.api-sca.checkmarx.net
+          sca_app_url: https://eu.sca.checkmarx.net
+          sca_access_control_url: https://eu.platform.checkmarx.net
+          sca_tenant: "APAC-Support" # <-- Insert Checkmarx CxSCA Tenant
+          sca_username: ${{ secrets.CHECKMARX_SCA_USERNAME }} # To be stored in GitHub Secrets.
+          sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
+          break_build: false
+          scanners: sca
+          bug_tracker: Sarif
+          params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --cx-flow.filterSeverity --cx-flow.filterCategory --github --cx-flow.enabled-zip-scan= true --cx-flow.sca.sca-enable-sca-resolver = true 
