@@ -25,4 +25,4 @@ jobs:
           break_build: false
           scanners: sca
           bug_tracker: Sarif
-          params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="https://github.com/carear-io/alto-ai" --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.sca.enabled-zip-scan= true --cx-flow.sca.include-sources= true  --cx-flow.sca.manifests-include-pattern= "!**/*.xml, **/*.yml"  --cx-flow.sca.fingerprints-include-pattern= "**/*.yml"                  
+          params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --repo-url="https://github.com/carear-io/alto-ai" --cx-flow.filterSeverity --cx-flow.filterCategory --cx-flow.sca.enabled-zip-scan= true --cx-flow.sca.include-sources= true  --cx-flow.sca.manifests-include-pattern= "!**/*.xml, **/*.yml"  --cx-flow.sca.fingerprints-include-pattern= "**/*.yml" --logging.level.com.checkmarx.flow.service=DEBUG                  
