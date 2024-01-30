@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Checkmarx CxFlow Action
         uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9 # GitHub Action version
         with:
-          project: "test_cxflow_ga" # <-- Insert Checkmarx CxSCA Project Name
+          project: "Github_pull_bug" # <-- Insert Checkmarx CxSCA Project Name
           sca_api_url: https://eu.api-sca.checkmarx.net
           sca_app_url: https://eu.sca.checkmarx.net
           sca_access_control_url: https://eu.platform.checkmarx.net
@@ -24,5 +24,5 @@ jobs:
           sca_password: ${{ secrets.CHECKMARX_SCA_PASSWORD }} # To be stored in GitHub Secrets.
           break_build: false
           scanners: sca
-          bug_tracker: Sarif
-          params: --checkmarx.settings-override=true --namespace=${{ github.repository_owner }}  --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --sca.enable-sca-resolver=true --sca.sca-resolver-add-parameters.log-level=Debug --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE
+          bug_tracker: GITHUBPULL
+          params: --namespace=${{ github.repository_owner }} --checkmarx.settings-override=true --repo-name=${{ github.event.repository.name }} --branch=${{ github.head_ref }} --merge-id=${{ github.event.number }} --sca.sca-resolver-add-parameters.log-level=Debug --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE
