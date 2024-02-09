@@ -1,0 +1,74 @@
+plugins {
+    id 'java'
+    id 'org.sonarqube' version '3.4.0.2513'
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.owasp.dependencycheck' version '6.2.2'
+}
+
+ext {
+    authUser = "$System.env.AUTH_USER"
+    authToken = "$System.env.AUTH_TOKEN"
+    mavenRepoName = "$System.env.MAVEN_REPO_NAME"
+    mavenRepoUrl = "$System.env.MAVEN_REPO_URL"
+}
+
+if (authUser == "null" || authToken == "null" || mavenRepoName == "null" || mavenRepoUrl == "null") {
+        authUser = userNameLocal
+        authToken = authTokenLocal
+        mavenRepoName = remoteMavenRepoName
+        mavenRepoUrl = remoteMavenRepoUrl
+}
+
+group = 'com.dfin.sledgehammer'
+sourceCompatibility = '17'
+version = System.getProperty('buildVersion', '0.0.1-SNAPSHOT')
+
+repositories {
+    mavenLocal()
+    if (authUser != "null" && authToken != "null" && mavenRepoName != "null" && mavenRepoUrl != "null") {
+        maven {
+            url mavenRepoUrl
+            name mavenRepoName
+            credentials {
+                username authUser
+                password authToken
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    implementation "net.logstash.logback:logstash-logback-encoder:6.6"
+    implementation "com.newrelic.logging:logback:2.3"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2021.0.3"
+    }
+}
+
+dependencyCheck {
+    skipConfigurations = ['checkstyle']
+    suppressionFile = '.dependency-check-ignore.xml'
+    formats = ['XML', 'HTML']
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "failed"
+        exceptionFormat "full"
+    }
+}
