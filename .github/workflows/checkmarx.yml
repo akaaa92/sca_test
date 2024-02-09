@@ -15,6 +15,14 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Install Maven
+        run: |
+          sudo apt update
+          sudo apt install maven -y
+      - name: Install Gradle
+        run: |
+          sudo apt update
+          sudo apt install gradle -y      
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx CxFlow Action
