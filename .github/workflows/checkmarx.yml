@@ -25,4 +25,4 @@ jobs:
           break_build: false
           scanners: sca
           bug_tracker: Sarif
-          params: --checkmarx.settings-override=true --namespace=${{ github.repository_owner }}  --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --sca.enabled-zip-scan= true --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE
+          params: --checkmarx.settings-override=true --namespace=${{ github.repository_owner }}  --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --sca.enabled-zip-scan=true --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.springframework.web.client.RestTemplate=TRACE
